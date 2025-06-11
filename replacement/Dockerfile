@@ -46,7 +46,8 @@ ADD ./conf/webpack.production.js /conf/webpack.production.js
 ADD ./conf/gruntfile.js /conf/gruntfile.js
 COPY --from=bins /generate/lang-replacement /usr/local/bin/
 WORKDIR /output
-
+mkdir -p ./portainer/dict
+COPY --from=bins /generate/ ./portainer/dict
 # VOLUME ["/data"]
 # EXPOSE 8080
 ENTRYPOINT ["/entry.sh"]
