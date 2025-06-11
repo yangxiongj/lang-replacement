@@ -33,7 +33,8 @@ RUN \
     # npm install -g yarn #installed
     # grunt
     npm install -g grunt-cli; \
-    grunt -h; \
+    npm install -g grunt; \
+    grunt --version; \
     # yarn
     yarn -v; \
     yarn config set registry https://registry.npm.taobao.org -g; \
