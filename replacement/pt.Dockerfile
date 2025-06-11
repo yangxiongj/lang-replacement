@@ -67,7 +67,7 @@ RUN echo node.ac.1234567; /entry.sh
 # PT/API
 # FROM golang:1.13.9-alpine3.10 as api
 # FROM golang:1.16.9-alpine3.14 as api
-FROM golang:1.16.8-alpine3.14 as api
+FROM golang:1.23-alpine3.21 as api
 # use go modules
 ENV GO111MODULE=on
 ENV GOPROXY=https://goproxy.cn
@@ -94,7 +94,7 @@ RUN echo golang.abc.0; \
 
 ##AGENT########################################
 # FROM library/golang:1.13.9-alpine3.10 as api
-FROM golang:1.16.8-alpine3.14 as agent
+FROM golang:1.23-alpine3.21 as agent
 # use go modules
 ENV GO111MODULE=on
 ENV GOPROXY=https://goproxy.cn
