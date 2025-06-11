@@ -10,9 +10,11 @@ FROM library/node:16-alpine AS builder
 MAINTAINER sam <sam@devcn.top>
 
 RUN domain="mirrors.aliyun.com" \
-&& echo "http://$domain/alpine/v3.8/main" > /etc/apk/repositories \
-&& echo "http://$domain/alpine/v3.8/community" >> /etc/apk/repositories \
-&& apk add git bash curl wget jq build-base gcc g++ make python3
+&& echo "http://$domain/alpine/v3.14/main" > /etc/apk/repositories \
+&& echo "http://$domain/alpine/v3.14/community" >> /etc/apk/repositories \
+&& apk update \
+&& apk --no-cache add git bash curl wget jq build-base gcc g++ make python3 \
+&& apk --no-cache add libpng-dev libjpeg-dev optipng gifsicle autoconf libtool automake
 # portainer: yarn install
 # RUN apk add autoconf libtool libpng automake gcc
 
@@ -56,7 +58,6 @@ ENV \
 # VOLUME ["/data"]
 # EXPOSE 8080
 ENTRYPOINT ["/entry.sh"]
-RUN apk add libpng
 
 #############
 #just lastStage build ##echo 123: force new build.
