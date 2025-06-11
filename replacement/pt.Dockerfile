@@ -107,8 +107,8 @@ RUN domain="mirrors.aliyun.com" \
 
 # gojq 1.4M; goawk 1.9M;
 RUN cd /tmp; \
-  curl -fSL -O https://ghproxy.com/https://github.com/itchyny/gojq/releases/download/v0.12.7/gojq_v0.12.7_linux_amd64.tar.gz; \
-  curl -fSL -O https://ghproxy.com/https://github.com/benhoyt/goawk/releases/download/v1.17.0/goawk_v1.17.0_linux_amd64.tar.gz; \
+  curl -fSL -O https://github.com/itchyny/gojq/releases/download/v0.12.7/gojq_v0.12.7_linux_amd64.tar.gz; \
+  curl -fSL -O https://github.com/benhoyt/goawk/releases/download/v1.17.0/goawk_v1.17.0_linux_amd64.tar.gz; \
   mkdir -p unpack1; \
   tar -zxf gojq_v0.12.7_linux_amd64.tar.gz -C /tmp/unpack1 --strip-components 1; \
   tar -zxf goawk_v1.17.0_linux_amd64.tar.gz -C /tmp/unpack1; \

@@ -52,20 +52,20 @@ function checkDeps(){ #static-curl,gojq,goawk
   # static-curl
   local arch=amd64; test -z "$(uname -a |grep aarch)" || arch=aarch64 
   local file=static-curl-$arch
-  curl_url=https://ghproxy.com/https://github.com/moparisthebest/static-curl/releases/download/v7.88.1/curl-$arch
+  curl_url=https://github.com/moparisthebest/static-curl/releases/download/v7.88.1/curl-$arch
   test -s $C/$file && echo "existed, skip" || $dlcmd $C/$file $curl_url
   curlBin=$C/$file; chmod +x $curlBin
   $curlBin -V > /dev/null 2>&1; test "0" == "$?" || errLog "curl-static错误"
 
   # jq/gojq
   local arch=amd64; test -z "$(uname -a |grep aarch)" || arch=arm64 
-  gojq_url=https://ghproxy.com/https://github.com/itchyny/gojq/releases/download/v0.12.12/gojq_v0.12.12_linux_$arch.tar.gz
+  gojq_url=https://github.com/itchyny/gojq/releases/download/v0.12.12/gojq_v0.12.12_linux_$arch.tar.gz
   test -s $C/gojq && echo "existed, skip" || $curlBin -k -fSL $AUTH $gojq_url | tar -zx -C $C --strip-components=1; #wget -O -
   jqBin=$C/gojq; $sudo chmod +x $jqBin
   $jqBin -v > /dev/null 2>&1; test "0" == "$?" || errLog "gojq 错误"
   
   # goawk
-  goawk_url=https://ghproxy.com/https://github.com/benhoyt/goawk/releases/download/v1.23.1/goawk_v1.23.1_linux_$arch.tar.gz
+  goawk_url=https://github.com/benhoyt/goawk/releases/download/v1.23.1/goawk_v1.23.1_linux_$arch.tar.gz
   #test -s $C/goawk && echo "existed, skip" || $curlBin -k -fSL $AUTH $goawk_url | tar -zx -C $C --strip-components=1;
 }
 echo -e "\ncheckDeps" && checkDeps
@@ -90,7 +90,7 @@ function initSV(){ # go-supervisor
   echo "initSV"
   local arch=amd64
   test -z "$(uname -a |grep aarch)" && arch=64-bit || arch=ARM64; \
-  gosv_url=https://ghproxy.com/https://github.com/ochinchina/supervisord/releases/download/v0.7.3/supervisord_0.7.3_Linux_$arch.tar.gz; \
+  gosv_url=https://github.com/ochinchina/supervisord/releases/download/v0.7.3/supervisord_0.7.3_Linux_$arch.tar.gz; \
   test -s $C/supervisord && echo "existed, skip" || $curlBin -k -fSL $AUTH $gosv_url | tar -zx -C $C --strip-components=1; \
   \cp -a $C/supervisord $BinDir/go-supervisord;
   rm -f $BinDir/sv; echo -e "#!/bin/bash\ntest -z "\$1" && go-supervisord ctl -h || go-supervisord ctl \$@" > $BinDir/sv; chmod +x $BinDir/sv;
