@@ -88,7 +88,7 @@ ENV \
 
 # COPY . .
 RUN echo golang.abc.0; \
-  git clone --depth=1 -b $BRANCH$TAG $REPO pt0; cd pt0/api; ls -lh; \
+  git clone --depth=1 -b ${BRANCH} ${REPO} pt0; cd pt0/api; ls -lh; \
   CGO_ENABLED=0 \
   go build -o portainer -v -ldflags "-s -w $flags" ./cmd/portainer/
 
@@ -121,7 +121,7 @@ ENV \
     BRANCH="sam-custom"
     # TAG="2.9.1"
 RUN echo agent.a.1234; \
-  git clone --depth=1 -b $BRANCH$TAG $REPO agent0; cd agent0; ls -lh; \
+  git clone --depth=1 -b ${BRANCH} ${REPO} agent0; cd agent0; ls -lh; \
   CGO_ENABLED=0 \
   go build -o agent -v -ldflags "-s -w $flags" ./cmd/agent/
 RUN cd agent0; \
