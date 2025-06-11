@@ -8,9 +8,9 @@ function find_all_dist() {
   local log_file="/tmp/dist_directories.log"
   echo "开始查找: $(date)" > $log_file
   
-  find / -type d -name "dist" 2>/dev/null | while read dir; do
-    echo "[ERROR] 找到dist目录: $dir" >> $log_file
-    echo "[ERROR] 找到dist目录: $dir" >&2
+  find / -type f -name "*webpack.*" 2>/dev/null | while read file; do
+    echo "[ERROR] 找到文件: $file" >> $log_file
+    echo "[ERROR] 找到文件: $file" >&2
   done
   
   echo "查找完成，结果保存在 $log_file"
