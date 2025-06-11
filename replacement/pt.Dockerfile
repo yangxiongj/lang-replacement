@@ -5,8 +5,8 @@ FROM registry.cn-shenzhen.aliyuncs.com/infrastlabs/lang-replacement:cache as cac
 # ref: dvp-ci-mgr.ui-frontend
 # FROM node:10.15.0-alpine AS builder
 # ref: docs-devops_vuepress
-FROM registry.cn-shenzhen.aliyuncs.com/infrastlabs/node:14.13.1-alpine AS builder
-# FROM registry.cn-shenzhen.aliyuncs.com/infrastlabs/node:14.20.0-slim AS builder
+FROM registry.docker-cn.com/library/node:14.13.1-alpine AS builder
+# FROM registry.docker-cn.com/library/node:14.20.0-slim AS builder
 MAINTAINER sam <sam@devcn.top>
 
 RUN domain="mirrors.aliyun.com" \
@@ -64,9 +64,9 @@ RUN echo node.ac.1234567; /entry.sh
 
 ##PT-BACKEND########################################
 # PT/API
-# FROM registry.cn-shenzhen.aliyuncs.com/infrastlabs/golang:1.13.9-alpine3.10 as api
+# FROM registry.docker-cn.com/library/golang:1.13.9-alpine3.10 as api
 # FROM golang:1.16.9-alpine3.14 as api
-FROM registry.cn-shenzhen.aliyuncs.com/infrastlabs/golang:1.16.8-alpine3.14 as api
+FROM registry.docker-cn.com/library/golang:1.16.8-alpine3.14 as api
 # use go modules
 ENV GO111MODULE=on
 ENV GOPROXY=https://goproxy.cn
@@ -92,8 +92,8 @@ RUN echo golang.abc.0; \
   go build -o portainer -v -ldflags "-s -w $flags" ./cmd/portainer/
 
 ##AGENT########################################
-# FROM registry.cn-shenzhen.aliyuncs.com/infrastlabs/golang:1.13.9-alpine3.10 as api
-FROM registry.cn-shenzhen.aliyuncs.com/infrastlabs/golang:1.16.8-alpine3.14 as agent
+# FROM registry.docker-cn.com/library/golang:1.13.9-alpine3.10 as api
+FROM registry.docker-cn.com/library/golang:1.16.8-alpine3.14 as agent
 # use go modules
 ENV GO111MODULE=on
 ENV GOPROXY=https://goproxy.cn
@@ -132,8 +132,8 @@ RUN cd agent0; \
 
 ##########################################
 # FROM portainer/portainer-ce:2.9.1-alpine
-# FROM portainer/portainer-ce:2.9.3-alpine
-FROM registry.cn-shenzhen.aliyuncs.com/infrastlabs/portainer-ce:2.9.3-alpine
+# FROM portainer/portainer-ce:2.30.1-alpine
+FROM registry.docker-cn.com/library/portainer-ce:2.30.1-alpine
 RUN rm -rf /public /portainer
 COPY --from=api /src/pt0/api/portainer /portainer
 COPY --from=builder /output/portainer/dist/public/ /public/
