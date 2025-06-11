@@ -4,10 +4,10 @@ FROM registry.cn-shenzhen.aliyuncs.com/infrastlabs/lang-replacement:cache as cac
 # ref: dvp-ci-mgr.ui-frontend
 # FROM node:10.15.0-alpine AS builder
  # ref: docs-devops_vuepress
- # node:14.13.1-alpine #39.36 MB
- # node:14.13.1-stretch-slim #57.83 MB
-# FROM node:14.13.1-alpine AS builder
-FROM node:14.13.1-stretch-slim AS builder
+ # node:16-alpine #39.36 MB
+ # node:16-stretch-slim #57.83 MB
+# FROM node:16-alpine AS builder
+FROM node:16-stretch-slim AS builder
 
 # RUN domain="mirrors.aliyun.com" \
 # && echo "http://$domain/alpine/v3.8/main" > /etc/apk/repositories \

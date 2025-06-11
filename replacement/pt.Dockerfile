@@ -5,7 +5,7 @@ FROM registry.cn-shenzhen.aliyuncs.com/infrastlabs/lang-replacement:cache as cac
 # ref: dvp-ci-mgr.ui-frontend
 # FROM node:10.15.0-alpine AS builder
 # ref: docs-devops_vuepress
-FROM library/node:14.13.1-alpine AS builder
+FROM library/node:16-alpine AS builder
 # FROM library/node:14.20.0-slim AS builder
 MAINTAINER sam <sam@devcn.top>
 
