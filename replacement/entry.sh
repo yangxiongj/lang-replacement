@@ -11,10 +11,14 @@ function npmBuild(){
      npm config set sass_binary_site http://cdn.npm.taobao.org/dist/node-sass -g
      # npm install -g yarn #installed
      # grunt
-     npm install -g grunt-cli
-     npm install -g grunt
+    #  npm install -g grunt-cli
     # grunt -h
-
+    cd /.cache/node_modules && \
+    if [ ! -d "./grunt" ] || [ ! -d "./grunt-cli" ]; then \
+        echo "安装 grunt 和 grunt-cli 到缓存目录"; \
+        cd / && npm install --prefix=/.cache grunt grunt-cli; \
+        cd ../../
+    fi
     # # yarn
     # yarn -v
     # yarn config set registry https://registry.npm.taobao.org -g
