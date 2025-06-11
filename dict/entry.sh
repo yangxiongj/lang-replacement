@@ -36,7 +36,7 @@ file=dict_button_th_placeholer.txt; wget -qO /generate/$file https://gitee.com/g
 cat /generate/$file |wc
 echo -e "已获取最新replaceDict, 请注意获取到dict的行数(避免无效数据) \n准备clone仓库反向分析 生成替换字典：(sleep 5)"; sleep 5
 
-outPath="/output/portainer/" && mkdir -p $outPath
+outPath="/output/" && mkdir -p $outPath
 # export CMP1=055c57
 # export CMP2=br-lang2
 export SOURCE=$srcGenerate/app

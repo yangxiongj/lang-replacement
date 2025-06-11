@@ -2,7 +2,7 @@
 #!/bin/bash
 # deps: git diff; go-diff
 set -e
-cur=$(cd "$(dirname "$0")"; pwd)
+cur=/output/portainer/dist
 GODIFF="$cur/godiff"
 
 # debug
