@@ -91,7 +91,7 @@ module.exports = function (grunt) {
       // 'shell:download_helm_binary:' + p + ':' + a,
       // 'shell:download_kompose_binary:' + p + ':' + a,
       // 'shell:download_kubectl_binary:' + p + ':' + a,
-      `webpack:dev`,
+      `webpack:${env}`,
     ]);
   });
 };
