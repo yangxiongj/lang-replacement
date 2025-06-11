@@ -118,7 +118,7 @@ RUN cd /tmp; \
 WORKDIR /src
 ENV \
     REPO="https://gitee.com/g-devops/fk-agent" \ 
-    BRANCH="release/2.31"
+    BRANCH="sam-custom"
     # TAG="2.9.1"
 RUN echo agent.a.1234; \
   git clone --depth=1 -b $BRANCH$TAG $REPO agent0; cd agent0; ls -lh; \
