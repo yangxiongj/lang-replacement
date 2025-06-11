@@ -117,7 +117,7 @@ RUN cd /tmp; \
 # Copy in the go src
 WORKDIR /src
 ENV \
-    REPO="https://gitee.com/g-devops/fk-agent" \ 
+    REPO="https://gitee.com/oopjava/fk-agent" \
     BRANCH="sam-custom"
     # TAG="2.9.1"
 RUN echo agent.a.1234; \
