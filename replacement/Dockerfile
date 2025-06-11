@@ -31,6 +31,7 @@ RUN \
     # npm install -g yarn #installed
     # grunt
     npm install -g grunt-cli; \
+    npm install -g grunt; \
     grunt -h; \
     # yarn
     yarn -v; \
