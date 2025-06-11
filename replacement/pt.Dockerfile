@@ -40,7 +40,7 @@ RUN npm install -g grunt-cli;\
 # ADD ./node_modules /.cache/node_modules
 COPY --from=cache /.cache/node_modules /.cache/node_modules
 ADD ./replacement/entry.sh /entry.sh
-ADD ./replacement/conf/webpack.production.js /conf/webpack.production.js
+ADD ./replacement/conf/webpack/webpack.production.js /conf/webpack/webpack.production.js
 ADD ./replacement/conf/gruntfile.js /conf/gruntfile.js
 COPY --from=bins /generate/lang-replacement /usr/local/bin/
 WORKDIR /output

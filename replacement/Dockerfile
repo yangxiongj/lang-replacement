@@ -42,7 +42,7 @@ RUN \
 # ADD ./node_modules /.cache/node_modules
 COPY --from=cache /.cache/node_modules /.cache/node_modules
 ADD ./entry.sh /entry.sh
-ADD conf/webpack/webpack.production.js /conf/webpack.production.js
+ADD conf/webpack/webpack.production.js /conf/webpack/webpack.production.js
 ADD ./conf/gruntfile.js /conf/gruntfile.js
 COPY --from=bins /generate/lang-replacement /usr/local/bin/
 WORKDIR /output
