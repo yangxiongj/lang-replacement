@@ -13,7 +13,7 @@ function npmBuild(){
      # grunt
     #  npm install -g grunt-cli
     # grunt -h
-    npm install --prefix=/.cache grunt grunt-cli;
+    #npm install --prefix=/.cache grunt grunt-cli;
     # # yarn
     # yarn -v
     # yarn config set registry https://registry.npm.taobao.org -g
@@ -22,7 +22,8 @@ function npmBuild(){
     # mkdir -p /output/.cache/node_modules; rm -rf node_modules;  ln -s /output/.cache/node_modules .;
     rm -rf node_modules;  ln -s /.cache/node_modules .;
     # yarn install
-
+    npm install grunt grunt-cli;
+    npm audit fix
     ## grunt build
     # grunt build #OK
     # npm run build
