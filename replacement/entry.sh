@@ -6,12 +6,12 @@ function npmBuild(){
     cd /output/portainer
 
     # # npm
-    # npm -v
-    # npm config set registry=https://registry.npm.taobao.org -g
-    # npm config set sass_binary_site http://cdn.npm.taobao.org/dist/node-sass -g
-    # # npm install -g yarn #installed
-    # # grunt
-    # npm install -g grunt-cli
+     npm -v
+     npm config set registry=https://registry.npm.taobao.org -g
+     npm config set sass_binary_site http://cdn.npm.taobao.org/dist/node-sass -g
+     # npm install -g yarn #installed
+     # grunt
+     npm install -g grunt-cli
     # grunt -h
 
     # # yarn
