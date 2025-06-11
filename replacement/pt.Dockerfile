@@ -26,7 +26,8 @@ RUN domain="mirrors.aliyun.com" \
 #   echo 'apt update -qq && apt install -yq --no-install-recommends $@ && apt-get clean && rm -rf /var/lib/apt/lists/*; ' > /usr/local/bin/apt.sh \
 #   && chmod +x /usr/local/bin/apt.sh
 # RUN apt.sh \ git bash curl wget jq libpng*
-
+RUN npm install -g grunt-cli grunt;\
+    npm install grunt-cli grunt;
 RUN \
     # npm
     npm -v; \
@@ -42,7 +43,6 @@ RUN \
     yarn -v; \
     yarn config set registry https://registry.npm.taobao.org -g; \
     yarn config set sass_binary_site http://cdn.npm.taobao.org/dist/node-sass -g
-RUN npm install -g grunt-cli;
 # TODO: node_mods from res_repo
 # ADD ./node_modules /.cache/node_modules
 COPY --from=cache /.cache/node_modules /.cache/node_modules
