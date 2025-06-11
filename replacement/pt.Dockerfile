@@ -26,8 +26,7 @@ RUN domain="mirrors.aliyun.com" \
 #   echo 'apt update -qq && apt install -yq --no-install-recommends $@ && apt-get clean && rm -rf /var/lib/apt/lists/*; ' > /usr/local/bin/apt.sh \
 #   && chmod +x /usr/local/bin/apt.sh
 # RUN apt.sh \ git bash curl wget jq libpng*
-RUN npm install -g grunt-cli grunt;\
-    npm install grunt-cli grunt;
+
 RUN \
     # npm
     npm -v; \
