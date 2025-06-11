@@ -7,7 +7,7 @@ FROM registry.cn-shenzhen.aliyuncs.com/infrastlabs/lang-replacement:cache as cac
 # ref: docs-devops_vuepress
 FROM library/node:16-alpine AS builder
 # FROM library/node:14.20.0-slim AS builder
-MAINTAINER sam <sam@devcn.top>
+LABEL maintainer="sam <sam@devcn.top>"
 
 RUN domain="mirrors.aliyun.com" \
 && echo "http://$domain/alpine/v3.14/main" > /etc/apk/repositories \
