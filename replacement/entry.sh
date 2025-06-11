@@ -22,7 +22,6 @@ function npmBuild(){
     # mkdir -p /output/.cache/node_modules; rm -rf node_modules;  ln -s /output/.cache/node_modules .;
     rm -rf node_modules;  ln -s /.cache/node_modules .;
     # yarn install
-    npm install grunt grunt-cli;
     ## grunt build
     # grunt build #OK
     # npm run build
