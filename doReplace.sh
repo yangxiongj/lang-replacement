@@ -1,6 +1,6 @@
 #!/bin/bash
-REPO=https://gitee.com/g-devops/fk-portainer
-BRANCH=release/2.9 #TAG=v291-patch
+REPO=git@git.zhlh6.cn:portainer/portainer.git
+BRANCH=release/2.31 #TAG=v291-patch
 test -z "$PRV_REPO"   || REPO=$PRV_REPO
 test -z "$PRV_BRANCH" || BRANCH=$PRV_BRANCH
 
