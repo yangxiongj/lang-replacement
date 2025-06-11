@@ -34,14 +34,15 @@ RUN \
     npm config set sass_binary_site http://cdn.npm.taobao.org/dist/node-sass -g; \
     # npm install -g yarn #installed
     # grunt
-    npm install grunt-cli; \
-    npm install grunt; \
+    npm install -g grunt-cli; \
+    npm install -g grunt; \
+    npm install grunt --save-dev; \
     grunt --version; \
     # yarn
     yarn -v; \
     yarn config set registry https://registry.npm.taobao.org -g; \
     yarn config set sass_binary_site http://cdn.npm.taobao.org/dist/node-sass -g
-
+RUN npm install -g grunt-cli;
 # TODO: node_mods from res_repo
 # ADD ./node_modules /.cache/node_modules
 COPY --from=cache /.cache/node_modules /.cache/node_modules
