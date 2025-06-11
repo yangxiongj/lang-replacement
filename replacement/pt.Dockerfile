@@ -34,8 +34,8 @@ RUN \
     npm config set sass_binary_site http://cdn.npm.taobao.org/dist/node-sass -g; \
     # npm install -g yarn #installed
     # grunt
-    npm install -g grunt-cli; \
-    npm install -g grunt; \
+    npm install grunt-cli; \
+    npm install grunt; \
     grunt --version; \
     # yarn
     yarn -v; \
