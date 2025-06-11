@@ -2,7 +2,7 @@
 #echo "export DOCKER_REGISTRY_USER_sdsir=xxx" >> /etc/profile
 #echo "export DOCKER_REGISTRY_PW_sdsir=xxx" >> /etc/profile
 export REPO="git@git.zhlh6.cn:portainer/portainer.git"
-export BRANCH="2.31"
+export BRANCH="release/2.31"
 export TAG="2.31"
 source /etc/profile
 export |grep DOCKER_REG

@@ -49,10 +49,10 @@ ADD ./replacement/conf/gruntfile.js /conf/gruntfile.js
 COPY --from=bins /generate/lang-replacement /usr/local/bin/
 WORKDIR /output
 ENV \
-    REPO="https://gitee.com/g-devops/fk-portainer" \ 
+    REPO="https://github.com/portainer/portainer.git" \
     # TAG="2.9.1"
     # TAG="v291-patch"
-    BRANCH="sam-custom"    
+    BRANCH="release/2.31"
 # VOLUME ["/data"]
 # EXPOSE 8080
 ENTRYPOINT ["/entry.sh"]
@@ -82,8 +82,8 @@ RUN domain="mirrors.aliyun.com" \
 # Copy in the go src
 WORKDIR /src
 ENV \
-    REPO="https://gitee.com/g-devops/fk-portainer" \ 
-    BRANCH="sam-custom"
+    REPO="https://github.com/portainer/portainer.git" \ 
+    BRANCH="release/2.31"
     # TAG="2.9.1"
 
 # COPY . .
@@ -118,7 +118,7 @@ RUN cd /tmp; \
 WORKDIR /src
 ENV \
     REPO="https://gitee.com/g-devops/fk-agent" \ 
-    BRANCH="sam-custom"
+    BRANCH="release/2.31"
     # TAG="2.9.1"
 RUN echo agent.a.1234; \
   git clone --depth=1 -b $BRANCH$TAG $REPO agent0; cd agent0; ls -lh; \

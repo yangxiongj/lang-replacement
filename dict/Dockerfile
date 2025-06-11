@@ -44,8 +44,8 @@ ADD ./entry.sh /generate
 RUN find /generate
 
 # EXPOSE 80
-ENV GENERATE_REPO="https://gitee.com/g-devops/fk-portainer" \
+ENV GENERATE_REPO="https://github.com/portainer/portainer.git" \
     GENERATE_OUTPUT="portainer_zh.xml" \
-    CMP1="2.9.1" \
-    CMP2="origin/br-lang2"
+    CMP1="2.31" \
+    CMP2="release/2.31"
 ENTRYPOINT /generate/entry.sh

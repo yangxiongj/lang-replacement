@@ -155,3 +155,5 @@ $ ./portainer --data=./data --admin-password=$token --templates=http://127.0.0.1
     - 容器监控Stats: 进程列表上移、更新周期5>1s
     - 容器信息Inspect：默认显示Json文本
 ```
+
+=> CANCELED [api 4/4] RUN echo golang.abc.0;   git clone --depth=1 -b sam-custom$TAG https://gitee.com/g-devops/  0.1s
