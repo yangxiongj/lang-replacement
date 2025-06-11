@@ -24,6 +24,7 @@ function npmBuild(){
      npm -v
      npm config set registry=https://registry.npm.taobao.org -g
      npm config set sass_binary_site http://cdn.npm.taobao.org/dist/node-sass -g
+     npm install --no-save webpack webpack-cli webpack-merge html-webpack-plugin copy-webpack-plugin
      # npm install -g yarn #installed
      # grunt
     #  npm install -g grunt-cli
