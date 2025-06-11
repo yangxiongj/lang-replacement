@@ -70,7 +70,7 @@ RUN echo node.ac.1234567; /entry.sh
 FROM golang:1.23-alpine3.21 as api
 # use go modules
 ENV GO111MODULE=on
-ENV GOPROXY=https://goproxy.cn
+#ENV GOPROXY=https://goproxy.cn
 
 # Build
 RUN domain="mirrors.aliyun.com" \
@@ -97,7 +97,7 @@ RUN echo golang.abc.0; \
 FROM golang:1.23-alpine3.21 as agent
 # use go modules
 ENV GO111MODULE=on
-ENV GOPROXY=https://goproxy.cn
+#ENV GOPROXY=https://goproxy.cn
 # Build
 RUN domain="mirrors.aliyun.com" \
 && echo "http://$domain/alpine/v3.14/main" > /etc/apk/repositories \
