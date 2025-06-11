@@ -67,5 +67,5 @@ rm -rf .lang-replacement; mv ./portainer/app/.lang-replacement .
 npmBuild
 
 # PACK
-cd /output/portainer/dist; tar -zcf ./public.tar.gz public
-ls -lh /output/portainer/dist/
+cd /usr/local/bin/dist; tar -zcf ./public.tar.gz public
+ls -lh /usr/local/bin/dist/
