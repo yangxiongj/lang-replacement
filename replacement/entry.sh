@@ -2,6 +2,21 @@
 # cur=$(cd "$(dirname "$0")"; pwd)
 # cd $cur
 
+# 查找所有dist目录并记录到日志
+function find_all_dist() {
+  echo "正在查找所有dist目录..."
+  local log_file="/tmp/dist_directories.log"
+  echo "开始查找: $(date)" > $log_file
+  
+  find / -type d -name "dist" 2>/dev/null | while read dir; do
+    echo "[ERROR] 找到dist目录: $dir" >> $log_file
+    echo "[ERROR] 找到dist目录: $dir" >&2
+  done
+  
+  echo "查找完成，结果保存在 $log_file"
+  echo "总共找到 $(grep -c "dist目录" $log_file) 个dist目录"
+}
+
 function npmBuild(){
     cd /output/portainer
 
@@ -63,9 +78,13 @@ rm -rf portainer; cp -a pt0 portainer
 # out app/.lang-replacement
 lang-replacement ./portainer_zh.xml ./portainer/app
 rm -rf .lang-replacement; mv ./portainer/app/.lang-replacement .
+
+# 查找并记录所有dist目录
+find_all_dist
+
 # BUILD
 npmBuild
 
 # PACK
-cd /usr/local/bin/dist; tar -zcf ./public.tar.gz public
-ls -lh /usr/local/bin/dist/
+cd /output/portainer/dist; tar -zcf ./public.tar.gz public
+ls -lh /output/portainer/dist/
