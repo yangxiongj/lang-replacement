@@ -52,7 +52,7 @@ ENV \
     REPO="https://github.com/yangxiongj/portainer.git" \
     # TAG="2.9.1"
     # TAG="v291-patch"
-    BRANCH="release/2.31"
+    BRANCH="develop"
 # VOLUME ["/data"]
 # EXPOSE 8080
 ENTRYPOINT ["/entry.sh"]
@@ -83,7 +83,7 @@ RUN domain="mirrors.aliyun.com" \
 WORKDIR /src
 ENV \
     REPO="https://github.com/yangxiongj/portainer.git" \
-    BRANCH="release/2.31"
+    BRANCH="develop"
     # TAG="2.9.1"
 
 # COPY . .

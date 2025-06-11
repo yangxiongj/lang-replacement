@@ -38,7 +38,7 @@ COPY --from=bins /generate/lang-replacement /usr/local/bin/
 WORKDIR /output
 ENV \
     REPO="https://github.com/yangxiongj/portainer.git" \
-    # BRANCH="release/2.31" \
+    # BRANCH="develop" \
     # TAG="2.9.1"
     TAG="v291-patch"
 # VOLUME ["/data"]

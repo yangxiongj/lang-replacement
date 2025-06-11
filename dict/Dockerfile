@@ -47,5 +47,5 @@ RUN find /generate
 ENV GENERATE_REPO="https://github.com/yangxiongj/portainer.git" \
     GENERATE_OUTPUT="portainer_zh.xml" \
     CMP1="2.31" \
-    CMP2="release/2.31"
+    CMP2="develop"
 ENTRYPOINT /generate/entry.sh
