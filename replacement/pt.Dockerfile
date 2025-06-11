@@ -134,7 +134,7 @@ RUN cd agent0; \
 ##########################################
 # FROM portainer/portainer-ce:2.9.1-alpine
 # FROM portainer/portainer-ce:2.30.1-alpine
-FROM registry.docker-cn.com/library/portainer-ce:2.30.1-alpine
+FROM registry.docker-cn.com/portainer/portainer-ce:2.30.1-alpine
 RUN rm -rf /public /portainer
 COPY --from=api /src/pt0/api/portainer /portainer
 COPY --from=builder /output/portainer/dist/public/ /public/
