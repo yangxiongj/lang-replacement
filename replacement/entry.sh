@@ -23,7 +23,6 @@ function npmBuild(){
     rm -rf node_modules;  ln -s /.cache/node_modules .;
     # yarn install
     npm install grunt grunt-cli;
-    npm audit fix
     ## grunt build
     # grunt build #OK
     # npm run build
