@@ -41,7 +41,7 @@ function npmBuild(){
     # grunt build #OK
     # npm run build
     ## grunt build prod
-    rm -f webpack/webpack.production.js; cp /conf/webpack/ webpack/
+    rm -f webpack/webpack.production.js; cp -r /conf/webpack/ webpack/
     rm -f gruntfile.js; cp /conf/gruntfile.js gruntfile.js
     grunt --gruntfile=./gruntfile.js devopsbuild
 }
