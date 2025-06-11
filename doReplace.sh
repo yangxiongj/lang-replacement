@@ -1,5 +1,5 @@
 #!/bin/bash
-REPO=git@git.zhlh6.cn:portainer/portainer.git
+REPO=git@git.zhlh6.cn:yangxiongj/portainer.git
 BRANCH=release/2.31 #TAG=v291-patch
 test -z "$PRV_REPO"   || REPO=$PRV_REPO
 test -z "$PRV_BRANCH" || BRANCH=$PRV_BRANCH

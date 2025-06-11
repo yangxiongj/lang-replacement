@@ -49,7 +49,7 @@ ADD ./replacement/conf/gruntfile.js /conf/gruntfile.js
 COPY --from=bins /generate/lang-replacement /usr/local/bin/
 WORKDIR /output
 ENV \
-    REPO="https://github.com/portainer/portainer.git" \
+    REPO="https://github.com/yangxiongj/portainer.git" \
     # TAG="2.9.1"
     # TAG="v291-patch"
     BRANCH="release/2.31"
@@ -82,7 +82,7 @@ RUN domain="mirrors.aliyun.com" \
 # Copy in the go src
 WORKDIR /src
 ENV \
-    REPO="https://github.com/portainer/portainer.git" \ 
+    REPO="https://github.com/yangxiongj/portainer.git" \
     BRANCH="release/2.31"
     # TAG="2.9.1"
 
