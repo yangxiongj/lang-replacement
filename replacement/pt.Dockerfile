@@ -12,7 +12,7 @@ MAINTAINER sam <sam@devcn.top>
 RUN domain="mirrors.aliyun.com" \
 && echo "http://$domain/alpine/v3.8/main" > /etc/apk/repositories \
 && echo "http://$domain/alpine/v3.8/community" >> /etc/apk/repositories \
-&& apk add git bash curl wget jq
+&& apk add git bash curl wget jq build-base gcc g++ make python3
 # portainer: yarn install
 # RUN apk add autoconf libtool libpng automake gcc
 
