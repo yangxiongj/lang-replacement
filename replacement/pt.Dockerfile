@@ -27,21 +27,13 @@ RUN domain="mirrors.aliyun.com" \
 #   && chmod +x /usr/local/bin/apt.sh
 # RUN apt.sh \ git bash curl wget jq libpng*
 
-RUN \
-    # npm
-    npm -v; \
-    npm config set registry=https://registry.npm.taobao.org -g; \
-    npm config set sass_binary_site http://cdn.npm.taobao.org/dist/node-sass -g; \
-    # npm install -g yarn #installed
-    # grunt
-    npm install -g grunt-cli; \
-    npm install -g grunt; \
-    npm install grunt --save-dev; \
-    grunt --version; \
-    # yarn
-    yarn -v; \
-    yarn config set registry https://registry.npm.taobao.org -g; \
-    yarn config set sass_binary_site http://cdn.npm.taobao.org/dist/node-sass -g
+#RUN \
+#    # npm
+#    npm -v; \
+#    npm config set registry=https://registry.npm.taobao.org -g; \
+#    npm config set sass_binary_site http://cdn.npm.taobao.org/dist/node-sass -g; \
+#    yarn config set registry https://registry.npm.taobao.org -g; \
+#    yarn config set sass_binary_site http://cdn.npm.taobao.org/dist/node-sass -g
 RUN npm install -g grunt-cli;\
     npm install -g grunt;\
     npm install grunt-cli grunt;
