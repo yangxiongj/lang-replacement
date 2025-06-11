@@ -36,7 +36,6 @@ RUN domain="mirrors.aliyun.com" \
 #    yarn config set sass_binary_site http://cdn.npm.taobao.org/dist/node-sass -g
 RUN npm install -g grunt-cli;\
     npm install -g grunt;\
-    npm install grunt-cli grunt;
 # TODO: node_mods from res_repo
 # ADD ./node_modules /.cache/node_modules
 COPY --from=cache /.cache/node_modules /.cache/node_modules
