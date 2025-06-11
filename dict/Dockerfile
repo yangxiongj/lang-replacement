@@ -1,4 +1,4 @@
-FROM registry.docker-cn.com/library/golang:1.13.9-alpine3.10 as builder
+FROM registry.docker-cn.com/golang:1.13.9-alpine3.10 as builder
 
 # use go modules
 ENV GO111MODULE=on

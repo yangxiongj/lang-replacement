@@ -65,9 +65,9 @@ RUN echo node.ac.1234567; /entry.sh
 
 ##PT-BACKEND########################################
 # PT/API
-# FROM registry.docker-cn.com/library/golang:1.13.9-alpine3.10 as api
+# FROM registry.docker-cn.com/golang:1.13.9-alpine3.10 as api
 # FROM golang:1.16.9-alpine3.14 as api
-FROM registry.docker-cn.com/library/golang:1.16.8-alpine3.14 as api
+FROM registry.docker-cn.com/golang:1.16.8-alpine3.14 as api
 # use go modules
 ENV GO111MODULE=on
 ENV GOPROXY=https://goproxy.cn
@@ -94,7 +94,7 @@ RUN echo golang.abc.0; \
 
 ##AGENT########################################
 # FROM registry.docker-cn.com/library/golang:1.13.9-alpine3.10 as api
-FROM registry.docker-cn.com/library/golang:1.16.8-alpine3.14 as agent
+FROM registry.docker-cn.com/golang:1.16.8-alpine3.14 as agent
 # use go modules
 ENV GO111MODULE=on
 ENV GOPROXY=https://goproxy.cn
