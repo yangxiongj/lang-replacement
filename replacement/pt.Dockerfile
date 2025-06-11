@@ -122,6 +122,14 @@ ENV \
     # TAG="2.9.1"
 RUN echo agent.a.1234; \
   git clone --depth=1 -b ${BRANCH} ${REPO} agent0; cd agent0; ls -lh; \
+  # 下载缺失的依赖模块
+  go mod download gitee.com/g-devops/chisel; \
+  # 下载所有依赖
+  go mod download all; \
+  # 验证依赖是否正确
+  go mod verify; \
+  # 清理缓存
+  go clean -cache; \
   CGO_ENABLED=0 \
   go build -o agent -v -ldflags "-s -w $flags" ./cmd/agent/
 RUN cd agent0; \
